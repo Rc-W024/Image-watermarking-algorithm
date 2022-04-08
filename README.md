@@ -83,7 +83,7 @@ Anaconda3（2019.10） Python3.7
 
 ### 1.生成水印图像
 
-```
+```python
 from PIL import Image
 from PIL import ImageDraw
 import hashlib
@@ -101,7 +101,7 @@ image.save(open('waterwater.png','wb'),'png')
 
 ### 2.嵌入函数
 
-```
+```python
 def encode(img_path, wm_path, res_path, alpha):
     img = cv2.imread(img_path)
     img_f = np.fft.fft2(img)
@@ -128,7 +128,7 @@ def encode(img_path, wm_path, res_path, alpha):
 
 ### 3.提取函数
 
-```
+```python
 def decode(ori_path, img_path, res_path, alpha):
     ori = cv2.imread(ori_path)
     img = cv2.imread(img_path)
@@ -152,7 +152,7 @@ def decode(ori_path, img_path, res_path, alpha):
 
 ### 4.翻转攻击
 
-```
+```python
 import cv2 
 
 image = cv2.imread("encode.png")
@@ -164,7 +164,7 @@ cv2.imwrite("Flipped.png", flipped)
 
 ### 5.椒盐攻击
 
-```
+```python
 def sp_noise(image,prob):
     output = np.zeros(image.shape,np.uint8)
     thres = 1 - prob
@@ -184,7 +184,7 @@ def sp_noise(image,prob):
 
 ### 6.高斯攻击
 
-```
+```python
 def gasuss_noise(image, mean=0, var=0.001):
     image = np.array(image/255, dtype=float)
     noise = np.random.normal(mean, var ** 0.5, image.shape)
@@ -204,7 +204,7 @@ def gasuss_noise(image, mean=0, var=0.001):
 
 ### 7.模糊攻击
 
-```
+```python
 def motion_filter(img, K_size=3):
 H, W, C = img.shape
 
@@ -229,7 +229,7 @@ return out
 
 ### 8.抖动攻击
 
-```
+```python
 def dither(steps): 
 
     try:
@@ -252,7 +252,7 @@ def dither(steps):
 
 ### 9.剪裁攻击
 
-```
+```python
 def function(image1,image2):
     h1,w1,c1 = image1.shape
     h2,w2,c2 = image2.shape
