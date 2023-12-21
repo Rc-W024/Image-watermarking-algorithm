@@ -88,7 +88,7 @@ from PIL import Image
 from PIL import ImageDraw
 import hashlib
 
-MD5 = hashlib.md5('8003117068肖青'.encode(encoding='UTF-8')).hexdigest()
+MD5 = hashlib.md5('水印信息'.encode(encoding='UTF-8')).hexdigest()
 
 image = Image.new('RGB',(850,100),"white")
 draw = ImageDraw.Draw(image)
